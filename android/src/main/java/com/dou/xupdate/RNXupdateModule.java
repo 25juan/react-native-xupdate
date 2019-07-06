@@ -32,7 +32,7 @@ public class RNXupdateModule extends ReactContextBaseJavaModule {
     this.initOKHttpUtils();
   }
 
-  public void initUpdate(final Context context, String packageName, Application application) {
+  public static void initUpdate(Context context, String packageName, Application application) {
     XUpdate.get()
             .debug(false)
             .isWifiOnly(false)                                               //默认设置只在wifi下检查版本更新
@@ -44,7 +44,7 @@ public class RNXupdateModule extends ReactContextBaseJavaModule {
               @Override
               public void onFailure(UpdateError error) {
                 if (error.getCode() != CHECK_NO_NEW_VERSION) {          //对不同错误进行处理
-                  Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT);
+                  //Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT);
                 }
               }
             })
@@ -53,8 +53,9 @@ public class RNXupdateModule extends ReactContextBaseJavaModule {
             .init(application);
   }
 
-  public void update(Context context,String updateUrl){
-    XUpdate.newBuild(context)
+  @ReactMethod
+  public void update(String updateUrl){
+    XUpdate.newBuild(getCurrentActivity())
             .updateUrl(updateUrl)
             .update();
   }

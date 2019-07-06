@@ -32,7 +32,26 @@
 ```javascript
 import RNXupdate from 'react-native-xupdate';
 
-// TODO: What to do with the module?
 RNXupdate;
 ```
-  
+
+在MainApplication 的onCreate方法中初始化xupdate:
+```
+RNXupdateModule.initUpdate(this,getPackageName(), this);
+```
+
+使用时:
+```
+RNXupdate.update(jsonUrl);
+json={
+    "Code": 0,
+  "Msg": "",
+  "UpdateStatus": 2,
+  "VersionCode": 4,
+  "VersionName": "1.0.1",
+  "ModifyContent": "新版本发布。",
+  "DownloadUrl": "xxx",
+  "ApkSize": 8408,// MB
+  "ApkMd5": "xxx"
+}
+```
