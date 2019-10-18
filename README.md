@@ -3,7 +3,7 @@
 
 ## Getting started
 
-`$ npm install react-native-xupdate --save`
+`$ yarn add git+https://github.com/25juan/react-native-xupdate.git`
 
 ### Mostly automatic installation
 
