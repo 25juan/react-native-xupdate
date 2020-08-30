@@ -16,7 +16,7 @@
 
 package com.dou.xupdate;
 
-import android.support.annotation.NonNull;
+
 
 
 import com.xuexiang.xupdate.proxy.IUpdateHttpService;
@@ -45,7 +45,7 @@ public class OKHttpUpdateHttpService implements IUpdateHttpService {
     }
 
     @Override
-    public void asyncGet(@NonNull String url, @NonNull Map<String, Object> params, final @NonNull Callback callBack) {
+    public void asyncGet( String url,  Map<String, Object> params, final  Callback callBack) {
         OkHttpUtils.get()
                 .url(url)
                 .params(transform(params))
@@ -64,7 +64,7 @@ public class OKHttpUpdateHttpService implements IUpdateHttpService {
     }
 
     @Override
-    public void asyncPost(@NonNull String url, @NonNull Map<String, Object> params, final @NonNull Callback callBack) {
+    public void asyncPost( String url,  Map<String, Object> params, final  Callback callBack) {
         //这里默认post的是Form格式，使用json格式的请修改 post -> postString
         OkHttpUtils.post()
                 .url(url)
@@ -84,7 +84,7 @@ public class OKHttpUpdateHttpService implements IUpdateHttpService {
     }
 
     @Override
-    public void download(@NonNull String url, @NonNull String path, @NonNull String fileName, final @NonNull DownloadCallback callback) {
+    public void download( String url,  String path,  String fileName, final  DownloadCallback callback) {
         OkHttpUtils.get()
                 .url(url)
                 .build()
@@ -113,7 +113,7 @@ public class OKHttpUpdateHttpService implements IUpdateHttpService {
     }
 
     @Override
-    public void cancelDownload(@NonNull String url) {
+    public void cancelDownload( String url) {
 
     }
 
