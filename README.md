@@ -30,7 +30,7 @@
 
 ## Usage
 ```javascript
-import RNXupdate from 'react-native-xupdate';
+import RNXupdate from 'react-native-xupdates';
 
 RNXupdate;
 ```
