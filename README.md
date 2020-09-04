@@ -3,11 +3,11 @@
 
 ## Getting started
 
-`$ yarn add git+https://github.com/25juan/react-native-xupdate.git`
+`$ yarn add react-native-xupdates`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-xupdate`
+`$ react-native link react-native-xupdates`
 
 ### Manual installation
 
