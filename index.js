@@ -14,10 +14,10 @@ function update(url,iosAppId,iosAppStore) {
   if(Platform.OS === 'android'){
     RNXupdate.update(url)
   }else {
-    updateIOS(appId,iosAppStore);
+    updateIOS(iosAppId,iosAppStore);
   }
 }
-function updateIOS(appId,iosAppStore) {
+function updateIOS(iosAppId,iosAppStore) {
   const url = `https://itunes.apple.com/cn/lookup?id=${appId}`
   fetch(url).then(res=>res.json()).then(result => {
     const info = (result.results || [])[0] || null
