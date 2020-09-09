@@ -10,17 +10,16 @@ const { RNXupdate } = NativeModules;
  * @param url
  * @param appId
  */
-function update(url,appId) {
+function update(url,iosAppId,iosAppStore) {
   if(Platform.OS === 'android'){
     RNXupdate.update(url)
   }else {
-    updateIOS(appId);
+    updateIOS(appId,iosAppStore);
   }
 }
-function updateIOS(appId) {
+function updateIOS(appId,iosAppStore) {
   const url = `https://itunes.apple.com/cn/lookup?id=${appId}`
   fetch(url).then(res=>res.json()).then(result => {
-
     const info = (result.results || [])[0] || null
     Device.getVersion().then(currVersion=> {
       if(!info || !currVersion) {
