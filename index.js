@@ -1,4 +1,4 @@
-import { Platform,Alert } from "react-native";
+import { Platform,Alert,Linking } from "react-native";
 import { NativeModules } from 'react-native';
 import Device from "react-native-device-info" ;
 
@@ -18,8 +18,9 @@ function update(url,iosAppId,iosAppStore) {
   }
 }
 function updateIOS(iosAppId,iosAppStore) {
-  const url = `https://itunes.apple.com/cn/lookup?id=${appId}`
+  const url = `https://itunes.apple.com/cn/lookup?id=${iosAppId}`
   fetch(url).then(res=>res.json()).then(result => {
+    debugger
     const info = (result.results || [])[0] || null
     Device.getVersion().then(currVersion=> {
       if(!info || !currVersion) {
