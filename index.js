@@ -20,8 +20,7 @@ function update(url,iosAppId,iosAppStore) {
 function updateIOS(iosAppId,iosAppStore) {
   const url = `https://itunes.apple.com/cn/lookup?id=${iosAppId}`
   fetch(url).then(res=>res.json()).then(result => {
-    debugger
-    const info = (result.results || [])[0] || null
+    const info = (result.results || [])[0] || null;
     Device.getVersion().then(currVersion=> {
       if(!info || !currVersion) {
         return
